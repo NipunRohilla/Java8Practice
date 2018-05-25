@@ -49,13 +49,15 @@ public class LambdaForEachExample {
 		listItems.forEach(s -> { 		
 		if("C".equals(s)){
 			System.out.println(s);			
-		}
-	});
+		}});
 		
 		System.out.println("Using Lambda foreach....method reference..");
 		listItems.forEach(System.out::println);
 		
-		
+		System.out.println("............Using streams....");
+		listItems.stream()
+				 .filter(s-> s.contains("A"))
+				 .forEach(System.out::println);
 	}
 	
 }
